@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman Game</title>
+  </head>
+  <body>
+
+    <h1>VALENTINES DAY HANGMAN!</h1>
+    <br>
+
+    PRESS ANY KEY TO GET STARTED! : <input type="text" id="letter" onkeyup="gameHangmen.getUserInput()">
+    <br>
+    WINS <input type="text" id="wins">
+    <br>
+    CURRENT WORD
+    <br>
+    <input type="text" id="randomWord">
+    <br>
+    LETTERS ALREADY GUESSED
+    <br>
+    <input type="text" id="guessed">
+
+    <script type="text/javascript">
+
+    var gameHangmen = {
+      noGuesses: 13,
+
+
+      getUserInput: function()
+      {
+        var userInput = document.getElementById("letter").value;
+        //document.write("you have chosen " + userInput);
+        console.log("you input " + userInput);
+        //document.getElementById("guessed").innerHTML;
+        //userInput.value = guessed;
+
+        gameHangmen.getWord();
+        //var str = "dashes";
+        //console.log(dashes[0]);
+        //str = dashes[0].replace(/_/g, userInput);
+        //console.log(str);
+        //console.log([0]);
+       // console.log(dashes[1]);
+       // console.log(dashes[2]);
+       // console.log(dashes[3]);
+        //for(j = 0; j < dashes.length; j++){
+         // console.log(str[j]);
+        //}
+
+
+        for(i=0; i < newArray.length; i++)
+        {
+          console.log("I'm at index " + i);
+          console.log(newArray[i]);
+          console.log(userInput);
+          
+          if(userInput === newArray[i])
+          {
+            console.log("We have a match");
+            console.log(dashes[i]);
+            //str = dashes[i].replace(/_/g, userInput);
+           // str = dashes.replace(/_/g, userInput);
+            str = newArray.charAt(i).replace(/_/g, userInput);
+            //str[i] = dashes[i].replace(/_/g, userInput);
+            console.log(dashes.charAt(i));
+            
+            str[i] = newArray[i];
+            
+            console.log(str);
+            console.log(dashes);
+            console.log(newArray);
+           
+            //dashes2 = dashes.replace(dashes[i], userInput);
+            //console.log(dashes);
+            //console.log(dashes2);
+          }
+          else {
+                  console.log("No match");
+          }
+        }
+      },
+
+      getWord: function()
+      {
+        // Words for my Valentines Day themed hangman game.
+        var wordArray = ["love", "roses", "romance", "chocolates", "champagne", "poems", "hearts", "stuffed animal", "engagement", "valentines cards", "valentine", "candlelight dinner", "moonlight stroll", "picnic", "kissing", "love letter"];
+
+        // get a random number to be the index for the array
+        randno = Math.floor(Math.random() * wordArray.length);
+
+        // radomly choose a word from the "words" array
+        document.write(wordArray[randno]);
+        //console.log(word);
+      
+        // Replace the word with dashes and display on the 
+        // screen
+        dashes = wordArray[randno].replace(/[^A-Z\s]/g,"_");
+
+        console.log(dashes);
+        document.write("this is the wordArray" + wordArray[randno]);
+      <!-- 2
+
+      //put each letter in the random word into an array -->
+      //newArray = wordArray[randno].split("");
+      newArray = wordArray[randno];
+      return newArray[randno], dashes;
+      },
+      
+      
+      
+        
+        
+      
+    };
+    //var userInput = gameHangmen.getUserInput();
+   // document.getElementById("demo").innerHTML = gameHangmen.getUserInput();
+    //console.log(x);
+
+ 
+    
+   // user = getUserInput();
+  //  console.log(user);
+  //  gameHangmen.getWord();
+  //  console.log("I know getWord executed because you are displaying the dashes " +dashes);
+  //  console.log(newArray);
+
+    //gameHangmen.compareFunction(userInput, dashes, newArray);
+      
+    
+      
+      
+      // the user should guess a letter
+
+      //compare newArray with userInput.  If equal, replace the dash with the letter.
+
+      
+
+
+    </script>
+
+  </body>
+</html>

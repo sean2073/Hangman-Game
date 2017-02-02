@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hangman Game</title>
+<!-- Link to your external CSS -->
+   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+
+    <h1>VALENTINES DAY HANGMAN!</h1>
+    <br>
+
+    PRESS ANY KEY TO GET STARTED! : <input type="text" id="letter" onkeyup="gameHangmen.getUserInput()">
+    <br>
+    
+    <p id="wins"> </p>
+    <br>
+    CURRENT WORD
+    <br>
+    <p id="currentword"> </p><br>
+    
+    <br><br><br>
+    NUMBER OF GUESSES REMAINING
+    <p id="numberOfGuesses"> </p>
+    
+    <br>
+    LETTERS ALREADY GUESSED
+    <br>
+    <p id="guessed">  </p>
+    <!--<input type="text" id="guessed"> -->
+
+    <script type="text/javascript">
+
+    var gameHangmen = {
+      noGuesses: 13,
+
+
+      getUserInput: function()
+      {
+        
+        var userInput = document.getElementById("letter").value;
+        document.getElementById("guessed").innerHTML = userInput;
+        //document.write("you have chosen " + userInput);
+        console.log("you input " + userInput);
+        
+        gameHangmen.getWord();
+        console.log(newArray);
+        console.log(newString);
+        //console.log(newArray[0] = "x");
+          var newString = [];
+        
+        for(i=0; i < newArray.length; i++)
+        {
+          console.log("User input is " + userInput);
+          console.log("I'm comparing " + newArray[i]);
+          if(userInput === newArray[i])
+          {
+            console.log("We have a match ");
+            newString[i] = userInput;
+            console.log(newString[i]);
+          }
+          else if (newArray[i] != " ")
+          {
+            console.log("No match ");
+            newString[i] = "_";
+            console.log(newString[i]);
+            //drinks[2] = "water";
+            //console.log(newArray[i] = "_");
+          }
+            else {
+              console.log("No match ");
+              newString[i] = " ";
+              console.log(newString[i]);
+            }
+          ;
+          
+        }
+        console.log(newString);
+        document.getElementById("currentword").innerHTML = newString;
+
+      },
+
+        
+
+      getWord: function()
+      {
+        // Words for my Valentines Day themed hangman game.
+        var wordArray = ["love", "roses", "romance", "chocolates", "champagne", "poems", "hearts", "stuffed animal", "engagement", "valentines cards", "valentine", "candlelight dinner", "moonlight stroll", "picnic", "kissing", "love letter"];
+
+        // get a random number to be the index for the array
+        randno = Math.floor(Math.random() * wordArray.length);
+
+        // radomly choose a word from the "words" array
+        //uncomment below
+        //document.write(wordArray[randno]);
+        //console.log(word);
+      
+        // Replace the word with dashes and display on the 
+        // screen
+
+        dashes = wordArray[randno].replace(/[^A-Z\s]/g,"_");
+
+        console.log(dashes);
+        //document.write("this is the wordArray " + wordArray[randno]);
+      <!-- 2
+
+      //put each letter in the random word into an array -->
+      //newArray = wordArray[randno].split("");
+      newArray = wordArray[randno];
+      return newArray, dashes;
+      },
+      
+      
+      
+        
+        
+      
+    };
+    //var userInput = gameHangmen.getUserInput();
+   // document.getElementById("demo").innerHTML = gameHangmen.getUserInput();
+    //console.log(x);
+
+ 
+    
+   // user = getUserInput();
+  //  console.log(user);
+  //  gameHangmen.getWord();
+  //  console.log("I know getWord executed because you are displaying the dashes " +dashes);
+  //  console.log(newArray);
+
+    //gameHangmen.compareFunction(userInput, dashes, newArray);
+      
+    
+      
+      
+      // the user should guess a letter
+
+      //compare newArray with userInput.  If equal, replace the dash with the letter.
+
+      
+
+
+    </script>
+
+  </body>
+</html>
